@@ -1,0 +1,469 @@
+html,body{
+width:100%;
+overflow-x:hidden;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--primary:#1e88e5;
+--bg:#f5f7fb;
+--card:#ffffff;
+--text:#222;
+--shadow:0 4px 15px rgba(0,0,0,.08);
+--shadow-lg:0 15px 35px rgba(30,136,229,.15);
+--radius:12px;
+--radius-lg:16px;
+--transition:0.3s ease;
+--transition-smooth:0.4s ease;
+}
+
+body.dark{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#f1f5f9;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+transition:var(--transition);
+}
+
+.container,.faq-container{
+width:100%;
+max-width:1200px;
+margin:auto;
+}
+
+.container{
+width:90%;
+padding:0 20px;
+}
+
+.navbar{
+background:var(--primary);
+padding:15px 0;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:#fff;
+font-size:22px;
+font-weight:700;
+}
+
+.logo img{
+width:40px;
+height:40px;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-links a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+}
+
+.theme-btn,.menu-btn{
+font-size:26px;
+color:#fff;
+cursor:pointer;
+}
+
+.theme-btn{
+font-size:22px;
+}
+
+.menu-btn{
+display:none;
+}
+
+.hero{
+padding:60px 20px;
+display:flex;
+justify-content:center;
+}
+
+.hero-card{
+max-width:700px;
+width:100%;
+padding:50px 30px;
+border-radius:14px;
+background:linear-gradient(135deg,#1e88e5,#42a5f5);
+text-align:center;
+color:#fff;
+}
+
+.hero-card h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero-card p{
+margin-bottom:25px;
+}
+
+.search-box{
+max-width:450px;
+margin:auto;
+background:#fff;
+padding:12px 18px;
+border-radius:50px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.search-box input{
+border:none;
+outline:none;
+width:100%;
+}
+
+.stat-card,.feature-card,.why-card,.paper-card{
+background:var(--card);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.stat-card{
+padding:25px;
+text-align:center;
+}
+
+.stat-card h2{
+color:var(--primary);
+margin-bottom:8px;
+}
+
+.section-title{
+text-align:center;
+font-size:32px;
+color:var(--primary);
+margin-bottom:35px;
+}
+
+.features{
+max-width:1200px;
+margin:50px auto;
+padding:0 20px;
+}
+
+.feature-grid,.paper-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.feature-card{
+padding:30px;
+text-align:center;
+font-size:40px;
+}
+
+.feature-card h3{
+font-size:16px;
+margin-top:10px;
+}
+
+.faq{
+max-width:900px;
+margin:70px auto;
+padding:0 20px;
+}
+
+.faq-item{
+background:var(--card);
+margin-bottom:15px;
+border-radius:var(--radius);
+overflow:hidden;
+box-shadow:var(--shadow);
+border:1px solid #eef2f7;
+}
+
+.faq-question{
+width:100%;
+padding:18px;
+border:none;
+background:transparent;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+font-size:16px;
+color:var(--text);
+}
+
+.faq-item:nth-child(n) .faq-question{
+font-size:17px;
+padding:22px 25px;
+background:#fff;
+font-weight:600;
+color:#222;
+}
+
+.faq-item:nth-child(n):hover .faq-question{
+background:#f8fbff;
+}
+
+.faq-question span{
+color:var(--primary);
+font-size:24px;
+font-weight:bold;
+transition:var(--transition);
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height var(--transition-smooth);
+}
+
+.faq-answer p{
+padding:0 18px 18px;
+color:#555;
+line-height:1.8;
+}
+
+.faq-item.active .faq-answer{
+max-height:300px;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+
+footer{
+background:var(--primary);
+color:#fff;
+padding:35px 20px;
+margin-top:15px;
+}
+
+.footer-content{
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.footer-content h3{
+margin-bottom:10px;
+}
+
+.footer-content p{
+line-height:1.8;
+}
+
+.epaper-faq,.why-us{
+padding:80px 20px;
+background:#f8fafc;
+}
+
+.faq-header,.section-heading{
+text-align:center;
+margin-bottom:40px;
+}
+
+.faq-header h2,.section-heading h2{
+font-size:36px;
+color:var(--primary);
+font-weight:700;
+margin-bottom:10px;
+}
+
+.faq-header p,.section-heading p{
+color:#64748b;
+max-width:600px;
+margin:auto;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.why-card,.paper-card{
+border-radius:var(--radius-lg);
+padding:30px 25px;
+text-align:center;
+transition:var(--transition);
+cursor:pointer;
+}
+
+.why-card:hover,.paper-card:hover{
+transform:translateY(-8px);
+box-shadow:var(--shadow-lg);
+}
+
+.why-icon{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.why-card h3,.paper-card h3{
+color:var(--primary);
+margin-bottom:12px;
+font-size:20px;
+}
+
+.paper-card h3{
+font-size:15px;
+}
+
+.why-card p,.paper-card p{
+color:#555;
+line-height:1.7;
+font-size:14px;
+}
+
+.paper-icon{
+width:55px;
+height:55px;
+object-fit:contain;
+margin-bottom:12px;
+transition:transform var(--transition);
+}
+
+.paper-card:hover .paper-icon{
+transform:scale(1.15);
+}
+
+.paper-card{
+padding:35px 20px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+@media(max-width:992px){
+.paper-grid,.feature-grid,.why-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:768px){
+.menu-btn{
+display:block;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:var(--primary);
+flex-direction:column;
+padding:20px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hero-card h1{
+font-size:30px;
+}
+
+.faq-header h2,.section-heading h2{
+font-size:28px;
+}
+
+.faq-question{
+font-size:15px;
+padding:18px;
+}
+
+.epaper-faq,.why-us{
+padding:30px 15px;
+}
+
+.section{
+margin:40px auto;
+}
+
+.hero{
+padding:30px 15px;
+}
+
+.stats{
+gap:10px;
+}
+
+footer{
+padding:25px 15px;
+margin-top:10px;
+}
+}
+
+@media(max-width:576px){
+.paper-grid,.feature-grid{
+grid-template-columns:1fr;
+gap:12px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.paper-card{
+padding:20px 10px;
+}
+
+.paper-icon{
+width:40px;
+height:40px;
+}
+
+.paper-card h3{
+font-size:13px;
+}
+
+.hero-card{
+padding:40px 20px;
+}
+
+.hero-card h1{
+font-size:24px;
+}
+
+.section-title,.faq-header h2{
+font-size:26px;
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.section-heading h2{
+font-size:28px;
+}
+}
