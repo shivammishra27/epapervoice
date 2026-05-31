@@ -109,10 +109,10 @@ Access The Hindu, Times of India, Dainik Bhaskar, Amar Ujala, Rajasthan Patrika 
 
     <div class="paper-grid">
 
-        <div class="paper-card">
-            <img src="main-img.png" alt="The Hindu" class="paper-icon">
-            <h3>The Hindu</h3>
-        </div>
+<div class="paper-card" onclick="openPaper('The Hindu')">
+    <img src="main-img.png" alt="The Hindu" class="paper-icon">
+    <h3>The Hindu</h3>
+</div>
 
         <div class="paper-card">
             <img src="main-img.png" alt="Times of India" class="paper-icon">
@@ -377,6 +377,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 </script>
+<script>
+async function openPaper(title) {
+    try {
+        const res = await fetch("https://epaper-backend-l55e.onrender.com/posts");
+        const posts = await res.json();
 
+        const paper = posts.find(
+            p => p.title.trim().toLowerCase() === title.toLowerCase()
+        );
+
+        if (paper) {
+            window.open(paper.content, "_blank");
+        } else {
+            alert("Link not found");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Error loading link");
+    }
+}
+</script>
 </body>
 </html>
